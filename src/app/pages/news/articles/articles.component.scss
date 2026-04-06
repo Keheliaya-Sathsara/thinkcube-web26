@@ -1,6 +1,6 @@
 // Base styles
 .home {
-  background: radial-gradient(ellipse at top, #ea0a2a80 -11%, #00000000 50%);
+  background: radial-gradient(ellipse at top, #f5821f80 -11%, #00000000 50%);
   width: 100%;
   background-color: black;
 }
@@ -190,7 +190,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, rgba(234, 10, 42, 0.3), rgba(0, 0, 0, 0.3));
+    background: linear-gradient(45deg, rgba(245, 130, 31, 0.3), rgba(0, 0, 0, 0.3));
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;

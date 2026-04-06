@@ -715,10 +715,10 @@
                 type="checkbox"
                 id="agreeTerms"
                 formControlName="agreeTerms"
-                class="rounded bg-[#131313] border-white text-red-600 focus:ring-0"
+                class="rounded bg-[#131313] border-white text-orange-500 focus:ring-0"
               />
               <label for="agreeTerms" class="ml-2 text-sm">
-                I hereby agree to your <a href="#" class="text-red-600">Privacy Policy</a> terms.
+                I hereby agree to your <a href="#" class="text-orange-500">Privacy Policy</a> terms.
               </label>
             </div>
             <div
@@ -741,7 +741,7 @@
             <button
               type="submit"
               [disabled]="contactForm.invalid || formSubmitting"
-              class="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-4 rounded-[25px] flex items-center justify-center transition duration-300"
+              class="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-4 rounded-[25px] flex items-center justify-center transition duration-300"
             >
               <span *ngIf="!formSubmitting" class="flex items-center">
                 Submit Request

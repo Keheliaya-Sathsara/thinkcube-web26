@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kolker+Brush&display=swap');
 
 .home {
-    // background: radial-gradient(ellipse at top, #ea0a2a80 -11%, #00000000 50%);
+    // background: radial-gradient(ellipse at top, #f5821f80 -11%, #00000000 50%);
     height: 100vh;
     width: 100%;
     background-color: black;
@@ -64,7 +64,7 @@
     transition: all 0.5s ease;
   
     &:hover {
-      background: radial-gradient(ellipse at top, rgba(234, 10, 42, 0.5) -11%, rgba(0, 0, 0, 0) 50%);
+      background: radial-gradient(ellipse at top, rgba(245, 130, 31, 0.5) -11%, rgba(0, 0, 0, 0) 50%);
       transition: all 0.5s ease;
     }
   }
@@ -79,7 +79,7 @@
       right: -10px;
       bottom: -10px;
       border-radius: inherit;
-      background: radial-gradient(ellipse at top, #ea0a2a80 -11%, #00000000 50%);
+      background: radial-gradient(ellipse at top, #f5821f80 -11%, #00000000 50%);
       z-index: 0;
       opacity: 0.8;
       transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;

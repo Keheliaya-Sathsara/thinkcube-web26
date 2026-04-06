@@ -18,7 +18,7 @@
   width: 40px;
   height: 40px;
   border: 4px solid #333;
-  border-top: 4px solid #ea0a2a;
+  border-top: 4px solid #f5821f;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 1rem;
@@ -31,7 +31,7 @@
 
 .header-section {
   position: relative;
-  background: radial-gradient(ellipse at top, #ea0a2a80 -11%, #00000000 50%);
+  background: radial-gradient(ellipse at top, #f5821f80 -11%, #00000000 50%);
   width: 100vw;
   margin: 0 calc(50% - 50vw);
   background-color: #000;
@@ -117,7 +117,7 @@
 
 .section-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(234, 10, 42, 0.15);
+  box-shadow: 0 8px 30px rgba(245, 130, 31, 0.15);
 }
 
 .card-header {
@@ -140,7 +140,7 @@
   content: "";
   width: 4px;
   height: 24px;
-  background: #ea0a2a;
+  background: #f5821f;
   border-radius: 2px;
   margin-right: 1rem;
   flex-shrink: 0;
@@ -180,7 +180,7 @@
   top: 0.75rem;
   width: 6px;
   height: 6px;
-  background: #ea0a2a;
+  background: #f5821f;
   border-radius: 50%;
   transform: translateY(-50%);
 }
@@ -218,7 +218,7 @@
 }
 
 .email-link:hover {
-  color: #ea0a2a;
+  color: #f5821f;
   text-decoration: underline;
 }
 
@@ -242,7 +242,7 @@
   position: fixed;
   bottom: clamp(20px, 4vw, 30px);
   right: clamp(20px, 4vw, 30px);
-  background: linear-gradient(135deg, #ea0a2a, #c8082a);
+  background: linear-gradient(135deg, #f5821f, #d97014);
   color: #fff;
   width: clamp(45px, 8vw, 50px);
   height: clamp(45px, 8vw, 50px);
@@ -252,7 +252,7 @@
   justify-content: center;
   font-size: clamp(16px, 3vw, 20px);
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(234, 10, 42, 0.4);
+  box-shadow: 0 4px 12px rgba(245, 130, 31, 0.4);
   transition: all 0.3s ease;
   z-index: 1000;
   text-decoration: none;
@@ -261,7 +261,7 @@
 
 .back-to-top:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(234, 10, 42, 0.6);
+  box-shadow: 0 6px 20px rgba(245, 130, 31, 0.6);
   border-color: rgba(255, 255, 255, 0.2);
 }
 
