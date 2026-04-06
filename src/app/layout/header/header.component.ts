@@ -17,11 +17,14 @@ export class HeaderComponent {
   isDarkMode = true;
 
   ngOnInit() {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme") === "light") {
-      this.isDarkMode = false;
-      document.documentElement.classList.remove("dark");
-    } else {
-      document.documentElement.classList.add("dark");
+    if (typeof document !== "undefined") {
+      if (typeof localStorage !== "undefined" && localStorage.getItem("theme") === "light") {
+        this.isDarkMode = false;
+        document.documentElement.classList.remove("dark");
+      } else {
+        this.isDarkMode = true;
+        document.documentElement.classList.add("dark");
+      }
     }
   }
 

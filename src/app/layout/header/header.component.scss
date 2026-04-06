@@ -2,15 +2,16 @@
   background: radial-gradient(ellipse at top, #f5821f -9%, transparent 95%);
   height: 100vh;
   width: 100%;
-  background-color: black;
+  background-color: white;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   visibility: hidden;
   color: black;
 }
 
-.mobile-menu-open {
-  transform: translateX(0) !important;
+:host-context(.dark) .mobile-header, .dark .mobile-header {
+  background-color: transparent;
+  color: white;
   visibility: visible !important;
 }
 
