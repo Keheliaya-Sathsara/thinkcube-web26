@@ -50,7 +50,7 @@ export class HeaderComponent {
   }
 
   @HostListener('document:keydown.escape', ['$event'])
-  onEscapePress(event: KeyboardEvent) {
+  onEscapePress(event: Event) {
     if (this.isMobileMenuOpen) {
       this.closeMobileMenu();
     }

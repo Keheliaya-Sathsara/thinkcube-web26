@@ -26,13 +26,24 @@
 
 .gradient-header {
   font-weight: bold;
-  background: linear-gradient(to right, #ffffff, #71717a);
-  background-clip: text;
+  background: linear-gradient(to right, #000000, #4b5563);
   -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+:host-context(.dark) .gradient-header, .dark .gradient-header {
+  background: linear-gradient(to right, #ffffff, #71717a);
+  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-text {
-  font-size: 20px;
+  color: #374151;
+}
+
+:host-context(.dark) .gradient-text, .dark .gradient-text {
   color: #a1a1aa;
 }
+
