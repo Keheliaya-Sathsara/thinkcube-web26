@@ -14,6 +14,27 @@ import { HostListener } from '@angular/core';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+  isDarkMode = true;
+
+  ngOnInit() {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme") === "light") {
+      this.isDarkMode = false;
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+  }
+
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    if (this.isDarkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }
   isScrolled = false;
   isMobileMenuOpen = false;
   isMobileIndustriesOpen = false;

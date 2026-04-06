@@ -1,5 +1,5 @@
 <section class="relative min-h-screen flex flex-col justify-center px-4 md:px-8 items-center overflow-hidden">
-  <div class="absolute inset-0 z-10 bg-black opacity-65"></div>
+  <div class="absolute inset-0 z-10 bg-white dark:bg-black opacity-65"></div>
   <div class="absolute inset-0 z-0">
     <div
       class="h-full w-full bg-fixed bg-cover bg-center bg-no-repeat"
@@ -8,42 +8,42 @@
   </div>
   <!-- <div class="z-20 w-full px-4 md:px-8 text-center md:text-left relative py-16 md:py-0">
     <h1
-      class="text-4xl sm:text-3xl md:text-[40px] lg:text-[72px] text-white font-bold mb-2 md:mb-4"
+      class="text-4xl sm:text-3xl md:text-[40px] lg:text-[72px] text-black dark:text-white font-bold mb-2 md:mb-4"
     >
       
     </h1>
-    <p class="text-[14px] text-sm md:text-base text-white max-w-md mx-auto md:mx-0">
+    <p class="text-[14px] text-sm md:text-base text-black dark:text-white max-w-md mx-auto md:mx-0">
       
     </p>
   </div> -->
   <div class="z-20 text-center md:text-left w-full px-4 md:px-0">
     <h1
-      class="text-3xl md:text-[40px] lg:text-[72px] text-white font-bold mb-4 md:absolute md:bottom-[25%] md:left-[10%]"
+      class="text-3xl md:text-[40px] lg:text-[72px] text-black dark:text-white font-bold mb-4 md:absolute md:bottom-[25%] md:left-[10%]"
     >
       Events
     </h1>
-    <p class="text-sm md:text-base text-white md:absolute md:bottom-[15%] md:left-[10%] max-w-md">
+    <p class="text-sm md:text-base text-black dark:text-white md:absolute md:bottom-[15%] md:left-[10%] max-w-md">
       Innovating solutions for efficient infrastructure and seamless logistics, ensuring the smooth movement of goods
       and people worldwide.
     </p>
   </div>
 </section>
 
-<section class="pt-6 md:pt-8 px-4 md:px-8 lg:px-16 bg-black">
+<section class="pt-6 md:pt-8 px-4 md:px-8 lg:px-16 bg-white dark:bg-black">
   <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
     <!-- Tab buttons - stacked on mobile, side by side on desktop -->
     <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
       <button
         (click)="setActiveTab('past')"
         class="cursor-pointer text-lg font-medium transition-colors"
-        [ngClass]="activeTab === 'past' ? 'text-white' : 'text-gray-400'"
+        [ngClass]="activeTab === 'past' ? 'text-black dark:text-white' : 'text-gray-600 dark:text-gray-400'"
       >
         Past Events
       </button>
       <button
         (click)="setActiveTab('upcoming')"
         class="cursor-pointer text-lg font-medium transition-colors"
-        [ngClass]="activeTab === 'upcoming' ? 'text-white' : 'text-gray-400'"
+        [ngClass]="activeTab === 'upcoming' ? 'text-black dark:text-white' : 'text-gray-600 dark:text-gray-400'"
       >
         Upcoming Events
       </button>
@@ -54,7 +54,7 @@
       <button
         (click)="setFilter('all')"
         class="cursor-pointer px-3 py-1 md:px-4 md:py-2 text-xs md:text-sm font-medium rounded-full transition-colors"
-        [ngClass]="activeFilter === 'all' ? 'bg-orange-500 text-white' : 'bg-gray-700 text-gray-300'"
+        [ngClass]="activeFilter === 'all' ? 'bg-orange-500 text-black dark:text-white' : 'bg-gray-700 text-gray-300'"
       >
         All
       </button>
@@ -62,7 +62,7 @@
         *ngFor="let type of eventTypes"
         (click)="setFilter(type)"
         class="cursor-pointer px-3 py-1 md:px-4 md:py-2 text-xs md:text-sm font-medium rounded-full transition-colors"
-        [ngClass]="activeFilter === type ? 'bg-orange-500 text-white' : 'bg-gray-700 text-gray-300'"
+        [ngClass]="activeFilter === type ? 'bg-orange-500 text-black dark:text-white' : 'bg-gray-700 text-gray-300'"
       >
         {{ type }}
       </button>
@@ -71,7 +71,7 @@
 
   <!-- Event cards -->
   <div class="grid gap-4 md:gap-6 mt-4">
-    <div *ngIf="filteredEvents.length === 0" class="text-white text-center py-10">
+    <div *ngIf="filteredEvents.length === 0" class="text-black dark:text-white text-center py-10">
       No events found for the selected filter.
     </div>
 
@@ -104,11 +104,11 @@
       >
         <div>
           <div class="flex justify-between items-center mb-2">
-            <span class="px-3 py-1 bg-[#4D4D4D] rounded-xl text-white text-xs font-medium">
+            <span class="px-3 py-1 bg-[#4D4D4D] rounded-xl text-black dark:text-white text-xs font-medium">
               {{ event.type }}
             </span>
           </div>
-          <h3 class="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2 poppins-bold line-clamp-2">
+          <h3 class="text-lg sm:text-xl font-bold text-black dark:text-white mb-1 sm:mb-2 poppins-bold line-clamp-2">
             {{ event.title }}
           </h3>
           <p class="text-xs sm:text-sm text-gray-300 mb-3 md:mb-4 poppins-regular">
@@ -120,7 +120,7 @@
           <div class="flex items-center mb-3 md:mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 md:h-5 md:w-5 text-gray-400 mr-2"
+              class="h-4 w-4 md:h-5 md:w-5 text-gray-600 dark:text-gray-400 mr-2"
               viewBox="0 -960 960 960"
               fill="#FFFFFF"
             >
@@ -138,14 +138,14 @@
           <!-- <div class="flex gap-2 sm:gap-3 poppins-regular">
             <a
               href="javascript:void(0)"
-              class="px-3 py-1 text-xs text-white border border-white rounded-full transition-colors hover:bg-white/20 active:bg-white/30"
+              class="px-3 py-1 text-xs text-black dark:text-white border border-white rounded-full transition-colors hover:bg-white/20 active:bg-white/30"
               (click)="$event.stopPropagation()"
             >
               Register
             </a>
             <a
               href="javascript:void(0)"
-              class="px-3 py-1 text-xs text-white border border-white rounded-full transition-colors hover:bg-white/20 active:bg-white/30"
+              class="px-3 py-1 text-xs text-black dark:text-white border border-white rounded-full transition-colors hover:bg-white/20 active:bg-white/30"
               (click)="$event.stopPropagation()"
             >
               Details
