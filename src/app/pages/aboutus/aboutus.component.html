@@ -4,8 +4,8 @@
   <div class="z-30 h-[110vh] cmb bg-fixed">
     <div class="overlay"></div>
     <div class="relative h-screen md:h-[110vh] flex flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-30 items-center">
-      <!-- Overlay -->
-      <div class="absolute z-10 bg-white dark:bg-black opacity-50"></div>
+      <!-- Overlay (Handled by CSS now) -->
+      <div class="absolute inset-0 z-10 hidden"></div>
 
       <!-- Text Content -->
       <div class="z-20 text-center md:text-left w-full px-4 md:px-0">
@@ -191,18 +191,18 @@
   <div class="my-8 sm:my-12 md:my-16 space-y-2 sm:space-y-3 md:space-y-4">
     <div
       *ngFor="let item of accordionItems; let i = index"
-      class="border border-t-1 border-b-1 border-l-0 border-r-0 border-white overflow-hidden"
+      class="border border-t-1 border-b-1 border-l-0 border-r-0 border-gray-300 dark:border-white overflow-hidden"
     >
       <div
         (click)="toggleAccordion(i)"
-        class="flex justify-between items-center p-3 sm:p-4 cursor-pointer bg-transparent hover:bg-gray-900 transition-colors duration-200"
+        class="flex justify-between items-center p-3 sm:p-4 cursor-pointer bg-transparent hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors duration-200"
       >
         <h2
           class="inter-bold text-lg sm:text-xl md:text-[20px] leading-[32px] sm:leading-[36px] md:leading-[40px] text-black dark:text-white pr-4"
         >
           {{ item.title }}
         </h2>
-        <div *ngIf="!item.isOpen" class="text-[#F3F4F6] flex-shrink-0">
+        <div *ngIf="!item.isOpen" class="text-gray-600 dark:text-[#F3F4F6] flex-shrink-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5 sm:h-6 sm:w-6"
@@ -213,7 +213,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
           </svg>
         </div>
-        <div *ngIf="item.isOpen" class="text-[#F3F4F6] flex-shrink-0">
+        <div *ngIf="item.isOpen" class="text-gray-600 dark:text-[#F3F4F6] flex-shrink-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5 sm:h-6 sm:w-6"
@@ -236,7 +236,7 @@
         <div class="flex justify-start">
           <button
             (click)="navigateToSeeMore(item.seeMoreLink)"
-            class="bg-[#EA0029] inter-regular text-sm sm:text-base md:text-[16px] leading-[28px] sm:leading-[32px] md:leading-[34px] text-black dark:text-white px-6 sm:px-8 py-2 rounded-2xl flex items-center cursor-pointer hover:bg-[#c50022] transition-colors duration-200"
+            class="bg-black hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-200 inter-regular text-sm sm:text-base md:text-[16px] leading-[28px] sm:leading-[32px] md:leading-[34px] text-white dark:text-black px-6 sm:px-8 py-2 rounded-2xl flex items-center cursor-pointer transition-colors duration-200"
           >
             <span>see more</span>
             <svg
@@ -244,7 +244,7 @@
               height="18px"
               viewBox="0 -960 960 960"
               width="18px"
-              fill="#FFFFFF"
+              fill="currentColor"
               class="ml-1 inline-block"
             >
               <path d="m216-160-56-56 464-464H360v-80h400v400h-80v-264L216-160Z"></path>
@@ -375,10 +375,10 @@
     <!-- Grid Layout -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
       <!-- Vision Card -->
-      <div class="p-4 sm:p-6 rounded-lg shadow-lg bg-[#161616]">
+      <div class="p-4 sm:p-6 rounded-lg shadow-lg bg-gray-50 dark:bg-[#161616]">
         <div class="flex items-center mb-4 sm:mb-6">
           <img
-            class="w-[40px] sm:w-[45px] md:w-[50px] flex-shrink-0"
+            class="w-[40px] sm:w-[45px] md:w-[50px] flex-shrink-0 invert dark:invert-0"
             src="/images/aboutus/light_bulb.png"
             alt="Vision icon"
           />
@@ -395,10 +395,10 @@
       </div>
 
       <!-- Mission Card -->
-      <div class="p-4 sm:p-6 rounded-lg shadow-lg bg-[#161616]">
+      <div class="p-4 sm:p-6 rounded-lg shadow-lg bg-gray-50 dark:bg-[#161616]">
         <div class="flex items-center mb-4 sm:mb-6">
           <img
-            class="w-[30px] sm:w-[32px] md:w-[35px] flex-shrink-0"
+            class="w-[30px] sm:w-[32px] md:w-[35px] flex-shrink-0 invert dark:invert-0"
             src="/images/aboutus/setting.png"
             alt="Mission icon"
           />
@@ -549,7 +549,7 @@
                   id="fullName"
                   formControlName="fullName"
                   placeholder="Enter your full name..."
-                  class="input-hover w-full bg-gray-100 dark:bg-[#131313] border border-[#818181] rounded-[25px] py-3 pl-10 pr-3 focus:outline-none focus:border-white focus:ring-1 focus:ring-white placeholder-white"
+                  class="input-hover w-full bg-gray-100 dark:bg-[#131313] border border-gray-300 dark:border-[#818181] rounded-[25px] py-3 pl-10 pr-3 focus:outline-none focus:border-black dark:focus:border-white focus:ring-1 focus:ring-black dark:focus:ring-white placeholder-gray-500 dark:placeholder-gray-400"
                 />
               </div>
               <div
@@ -588,7 +588,7 @@
                   id="email"
                   formControlName="email"
                   placeholder="Enter your email Address..."
-                  class="input-hover w-full bg-gray-100 dark:bg-[#131313] border border-[#818181] rounded-[25px] py-3 pl-10 pr-3 focus:outline-none focus:border-white focus:ring-1 focus:ring-white placeholder-white"
+                  class="input-hover w-full bg-gray-100 dark:bg-[#131313] border border-gray-300 dark:border-[#818181] rounded-[25px] py-3 pl-10 pr-3 focus:outline-none focus:border-black dark:focus:border-white focus:ring-1 focus:ring-black dark:focus:ring-white placeholder-gray-500 dark:placeholder-gray-400"
                 />
               </div>
               <div
@@ -665,7 +665,7 @@
                   id="phone"
                   formControlName="phoneNumber"
                   placeholder="(000)000-0000"
-                  class="input-hover w-full bg-gray-100 dark:bg-[#131313] border border-[#818181] rounded-[25px] py-3 pl-10 pr-3 focus:outline-none focus:border-white focus:ring-1 focus:ring-white placeholder-white"
+                  class="input-hover w-full bg-gray-100 dark:bg-[#131313] border border-gray-300 dark:border-[#818181] rounded-[25px] py-3 pl-10 pr-3 focus:outline-none focus:border-black dark:focus:border-white focus:ring-1 focus:ring-black dark:focus:ring-white placeholder-gray-500 dark:placeholder-gray-400"
                 />
               </div>
               <!-- </div> -->
@@ -692,7 +692,7 @@
                   formControlName="message"
                   placeholder="Enter your main text here..."
                   rows="6"
-                  class="input-hover w-full bg-gray-100 dark:bg-[#131313] border border-[#818181] rounded-[25px] py-3 px-3 focus:outline-none focus:border-white focus:ring-1 focus:ring-white placeholder-white"
+                  class="input-hover w-full bg-gray-100 dark:bg-[#131313] border border-gray-300 dark:border-[#818181] rounded-[25px] py-3 px-3 focus:outline-none focus:border-black dark:focus:border-white focus:ring-1 focus:ring-black dark:focus:ring-white placeholder-gray-500 dark:placeholder-gray-400"
                 ></textarea>
                 <div class="text-xs text-gray-500 mt-1 text-right">
                   {{ contactForm.get('message')?.value?.length || 0 }}/500
@@ -715,7 +715,7 @@
                 type="checkbox"
                 id="agreeTerms"
                 formControlName="agreeTerms"
-                class="rounded bg-gray-100 dark:bg-[#131313] border-white text-orange-500 focus:ring-0"
+                class="rounded bg-gray-100 dark:bg-[#131313] border-gray-300 dark:border-white text-orange-500 focus:ring-0"
               />
               <label for="agreeTerms" class="ml-2 text-sm">
                 I hereby agree to your <a href="#" class="text-orange-500">Privacy Policy</a> terms.
@@ -741,7 +741,7 @@
             <button
               type="submit"
               [disabled]="contactForm.invalid || formSubmitting"
-              class="w-full bg-orange-500 hover:bg-orange-600 text-black dark:text-white font-medium py-3 px-4 rounded-[25px] flex items-center justify-center transition duration-300"
+              class="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-4 rounded-[25px] flex items-center justify-center transition duration-300"
             >
               <span *ngIf="!formSubmitting" class="flex items-center">
                 Submit Request
@@ -757,7 +757,7 @@
               </span>
               <span *ngIf="formSubmitting" class="flex items-center">
                 <svg
-                  class="animate-spin -ml-1 mr-3 h-5 w-5 text-black dark:text-white"
+                  class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
