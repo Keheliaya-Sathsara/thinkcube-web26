@@ -23,7 +23,7 @@
     <div class="pb-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         @for(number of paginatedNewses; track number.name) {
-        <div class="bg-transparent rounded-lg shadow-lg p-4 flex flex-col justify-between items-center transition-transform transform hover:scale-105 border border-[#E9ECF633] h-full">
+        <div class="bg-transparent rounded-lg shadow-lg p-4 flex flex-col justify-between items-center transition-transform transform hover:scale-105 border border-gray-200 dark:border-[#E9ECF633] h-full">
           <div class="w-full h-48 overflow-hidden rounded-lg"> <!-- Fixed height container -->
             <img src="{{ number.image }}" alt="{{ number.name }}" class="w-full h-full object-cover" />
           </div>
@@ -51,7 +51,7 @@
         [pageIndex]="currentPage"
         (page)="handlePageEvent($event)"
         aria-label="Select page"
-        class="bg-white text-black dark:text-white mt-8"
+        class="bg-transparent dark:bg-transparent text-black dark:text-white mt-8"
       >
       </mat-paginator>
     </div>
