@@ -26,6 +26,13 @@
   
   .gradient-header {
     font-weight: bold;
+    background: linear-gradient(to right, #000000, #4b5563);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  :host-context(.dark) .gradient-header, .dark .gradient-header {
     background: linear-gradient(to right, #ffffff, #71717a);
     background-clip: text;
     -webkit-background-clip: text;
