@@ -27,17 +27,17 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
           <div class="md:text-left">
             <h2
-              class="text-3xl sm:text-4xl md:text-[47px] leading-tight bg-clip-text text-[transparent] bg-gradient-to-r from-white to-gray-400 font-bold mb-3 sm:mb-4">
+              class="text-3xl sm:text-4xl md:text-[47px] leading-tight gradient-header font-bold mb-3 sm:mb-4">
               {{ sector?.contentone }} <br class="hidden sm:block" />
               {{ sector?.contenttwo }} <br class="hidden sm:block" />
               {{ sector?.contentthree }}
             </h2>
             <p
-              class="text-[16px] sm:text-[16px] md:text-[16px] lg:text-[16px] md:text-base text-[#4B5563] mb-4 sm:mb-6">
+              class="text-[16px] sm:text-[16px] md:text-[16px] lg:text-[16px] md:text-base text-gray-700 dark:text-[#4B5563] mb-4 sm:mb-6">
               {{ sector?.paragraphone }}
             </p>
           </div>
-          <div class="text-gray-300 text-xs sm:text-sm md:text-base text-left sm:text-justify mt-0 md:mt-0">
+          <div class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm md:text-base text-left sm:text-justify mt-0 md:mt-0">
             <p class="text-[16px] sm:text-[16px] md:text-[16px] mb-3 sm:mb-4">{{ sector?.paragraphtwo }}</p>
             <p class="text-[16px] sm:text-[16px] md:text-[16px] mb-3 sm:mb-4">{{ sector?.paragraphthree }}</p>
           </div>
@@ -48,11 +48,11 @@
             {{ sector?.headertwo }}
           </h2>
           <h2
-            class="text-3xl sm:text-[36px] md:text-[48px] md:text-left mb-4 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 font-bold mb-3 sm:mb-4">
+            class="text-3xl sm:text-[36px] md:text-[48px] md:text-left mb-4 sm:mb-8 gradient-header font-bold mb-3 sm:mb-4">
             {{ sector?.headerthree }} <br class="hidden sm:block" />
             {{ sector?.headerfour }}
           </h2>
-          <p class="text-[16px] sm:text-[16px] md:text-[16px] text-[#F3F4F6] mb-6 w-full md:w-[50%] pr-0 md:pr-8">
+          <p class="text-[16px] sm:text-[16px] md:text-[16px] text-gray-600 dark:text-[#F3F4F6] mb-6 w-full md:w-[50%] pr-0 md:pr-8">
             {{ sector?.paragraphfour }}
           </p>
 
@@ -60,7 +60,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 mb-6 sm:mb-8"
             *ngFor="let company of companyCards; trackBy: trackById">
             <div
-              class="lg:col-span-4 bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg h-auto sm:h-[400px] md:h-[440px] flex flex-col">
+              class="lg:col-span-4 bg-gray-50 border border-gray-200 dark:border-transparent dark:bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg h-auto sm:h-[400px] md:h-[440px] flex flex-col">
               <div class="flex justify-between items-center mb-6 sm:mb-6">
                 <div>
                   <h3 class="text-lg sm:text-lg font-semibold text-black">{{ company.cardcontentone }}</h3>
