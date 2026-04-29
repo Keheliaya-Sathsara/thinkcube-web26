@@ -1,91 +1,72 @@
-<section>
-  <div class="dark:bg-black dark:text-white py-20 px-4 md:py-16 md:px-8 lg:px-30">
-    <div class="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
-      <div class="mb-8 md:mb-12">
-        <!-- 01. Banner -->
-        <div class="mb-6 md:mb-8 my-4 md:my-8">
-          <img src="{{ article.banner }}" class="w-full h-48 sm:h-64 md:h-auto object-cover md:object-contain rounded-lg" alt="Article Banner" />
-        </div>
+<section class="dark:bg-[#0a0a0a] relative pb-24 bg-slate-50">
+  <!-- Dynamic Banner Background -->
+  <div class="w-full h-[40vh] md:h-[60vh] relative">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20 z-10"></div>
+    <img src="{{ article.banner }}" class="w-full h-full object-cover" alt="Article Banner" />
+  </div>
 
-        <!-- 02. Heading -->
-        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold inter-bold mb-4 px-2 md:px-8 leading-tight">{{ article.heading }}</h1>
+  <div class="px-4 sm:px-6 lg:px-8 relative z-20 -mt-32 md:-mt-48">
+    <div class="max-w-4xl mx-auto bg-white dark:bg-[#111] rounded-[2rem] shadow-2xl border border-gray-100 dark:border-gray-800 p-8 sm:p-12 md:p-16 overflow-hidden relative">
+      <!-- Accent Top Border -->
+      <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-400 to-orange-600"></div>
 
-        <!-- 03. Avatar with author info and social share icons -->
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 md:mb-8 px-2 md:px-8">
-          <!-- Author info with avatar -->
-          <div class="flex items-center mb-4 md:mb-0">
-            <img src="{{ article.avatar }}" class="w-10 h-10 md:w-12 md:h-12 rounded-full mr-3 md:mr-4 flex-shrink-0" alt="Author's Avatar" />
-            <div>
-              <p class="text-gray-600 dark:text-gray-400 text-xs md:text-sm poppins-regular">{{ article.author.detailone }}</p>
-              <p class="text-black dark:text-white text-xs md:text-sm font-medium poppins-regular">{{ article.author.detailtwo }}</p>
-            </div>
+      <!-- 02. Heading -->
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold inter-bold mb-8 text-slate-900 dark:text-white leading-tight">
+        {{ article.heading }}
+      </h1>
+
+      <!-- 03. Avatar with author info -->
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 pb-8 border-b border-gray-100 dark:border-gray-800">
+        <div class="flex items-center">
+          <div class="relative">
+            <img src="{{ article.avatar }}" class="w-14 h-14 md:w-16 md:h-16 rounded-full mr-4 flex-shrink-0 object-cover shadow-sm" alt="Author's Avatar" />
+            <div class="absolute bottom-0 right-3 w-4 h-4 bg-green-500 border-2 border-white dark:border-[#111] rounded-full"></div>
           </div>
-
-          <!-- Social share icons (commented out but keeping structure) -->
-          <!-- <div class="flex items-center">
-            <span class="text-gray-600 dark:text-gray-400 mr-3 inter-regular text-sm">Share:</span>
-            <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-black dark:text-white mr-4">
-              <img class="social-icon w-4 h-4 md:w-5 md:h-5" src="/images/news/articles/FB.png" alt="Facebook" />
-            </a>
-            <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-black dark:text-white mr-4">
-              <img class="social-icon w-4 h-4 md:w-5 md:h-5" src="/images/news/articles/Insta.png" alt="Instagram" />
-            </a>
-            <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-black dark:text-white">
-              <img class="social-icon w-4 h-4 md:w-5 md:h-5" src="/images/news/articles/link.png" alt="Link" />
-            </a>
-          </div> -->
+          <div>
+            <p class="text-slate-900 dark:text-white text-base md:text-lg font-bold poppins-bold">{{ article.author.detailtwo }}</p>
+            <p class="text-orange-600 dark:text-orange-400 text-sm font-medium uppercase tracking-wider">{{ article.author.detailone }}</p>
+          </div>
         </div>
+      </div>
 
-        <!-- 04. Content sections -->
-        <div class="prose prose-sm md:prose-lg prose-invert max-w-none mb-6 md:mb-8 px-2 md:px-8">
-          <p class="text-gray-600 dark:text-[#A1A1AA] inter-regular text-sm md:text-base leading-relaxed">{{ article.contentone }}</p>
-        </div>
+      <!-- 04. Content sections -->
+      <div class="prose prose-lg dark:prose-invert max-w-none space-y-8">
+        <p class="text-gray-600 dark:text-[#A1A1AA] text-lg leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:text-orange-500 first-letter:mr-3 first-letter:float-left">
+          {{ article.contentone }}
+        </p>
 
-        <div class="prose prose-sm md:prose-lg prose-invert max-w-none mb-6 md:mb-8 px-2 md:px-8">
-          <p class="text-gray-600 dark:text-[#A1A1AA] inter-regular text-sm md:text-base leading-relaxed">{{ article.contenttwo }}</p>
-        </div>
+        <p class="text-gray-600 dark:text-[#A1A1AA] text-lg leading-relaxed">{{ article.contenttwo }}</p>
 
-        <div class="prose prose-sm md:prose-lg prose-invert max-w-none mb-6 md:mb-8 px-2 md:px-8">
-          <p class="text-gray-600 dark:text-[#A1A1AA] inter-regular text-sm md:text-base leading-relaxed">{{ article.contentthree }}</p>
-        </div>
+        <p class="text-gray-600 dark:text-[#A1A1AA] text-lg leading-relaxed">{{ article.contentthree }}</p>
 
         <!-- 05. Quote -->
-        <div class="my-6 md:my-8 border-l-4 border-orange-500 pl-4 md:pl-8 mx-2 md:mx-0 md:w-3/4">
-          <blockquote class="text-lg md:text-xl font-regular italic tracking-[0px] text-gray-600 dark:text-[#A1A1AA] leading-relaxed">
+        <div class="my-12 p-8 bg-orange-50 dark:bg-orange-900/10 rounded-2xl border-l-4 border-orange-500 relative">
+          <svg class="absolute top-4 left-4 w-8 h-8 text-orange-200 dark:text-orange-800/50 transform -scale-x-100" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"></path>
+          </svg>
+          <blockquote class="text-xl md:text-2xl font-medium italic text-slate-800 dark:text-white leading-relaxed relative z-10 mt-4">
             "{{ article.quote }}"
           </blockquote>
         </div>
 
         <!-- Small heading and content -->
-        <div class="prose prose-sm md:prose-lg prose-invert max-w-none mb-6 md:mb-8 px-2 md:px-8 md:w-3/4">
-          <h6 class="text-lg md:text-xl text-black dark:text-white inter-bold font-semibold mb-3">{{ article.smallheading }}</h6>
-        </div>
-
-        <div class="prose prose-sm md:prose-lg prose-invert max-w-none mb-6 md:mb-8 px-2 md:px-8">
-          <p class="text-gray-600 dark:text-[#A1A1AA] inter-regular text-sm md:text-base leading-relaxed">{{ article.smallcontent }}</p>
-        </div>
+        <h3 class="text-2xl text-slate-900 dark:text-white font-bold mt-12 mb-4">{{ article.smallheading }}</h3>
+        
+        <p class="text-gray-600 dark:text-[#A1A1AA] text-lg leading-relaxed">{{ article.smallcontent }}</p>
 
         <!-- 06. Content four -->
-        <div class="prose prose-sm md:prose-lg prose-invert max-w-none mb-6 md:mb-8 px-2 md:px-8">
-          <p class="text-gray-600 dark:text-[#A1A1AA] leading-relaxed md:leading-[28px] inter-regular text-sm md:text-base">{{ article.contenfour }}</p>
-        </div>
+        <p class="text-gray-600 dark:text-[#A1A1AA] text-lg leading-relaxed">{{ article.contenfour }}</p>
 
         <!-- 07. Header two -->
-        <h2 class="text-lg md:text-xl font-bold mt-6 md:mt-8 mb-4 px-2 md:px-8 inter-bold leading-tight">{{ article.headertwo }}</h2>
+        <h2 class="text-3xl text-slate-900 dark:text-white font-bold mt-12 mb-6">{{ article.headertwo }}</h2>
 
         <!-- Article image -->
-        <div class="my-6 md:my-8 px-2 md:px-8">
-          <div class="flex justify-start">
-            <div class="w-full">
-              <img src="{{ article.imagesaas }}" class="w-full h-48 sm:h-64 md:h-auto object-cover md:object-contain rounded-lg" alt="Article Image" />
-            </div>
-          </div>
+        <div class="my-10 rounded-2xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-800">
+          <img src="{{ article.imagesaas }}" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" alt="Article Specific Subject Image" />
         </div>
 
         <!-- 09. Content five -->
-        <div class="prose prose-sm md:prose-lg prose-invert max-w-none px-2 md:px-8 mb-6 md:mb-0">
-          <p class="text-gray-600 dark:text-[#A1A1AA] leading-relaxed md:leading-[28px] inter-regular text-sm md:text-base">{{ article.contentfive }}</p>
-        </div>
+        <p class="text-gray-600 dark:text-[#A1A1AA] text-lg leading-relaxed">{{ article.contentfive }}</p>
       </div>
     </div>
   </div>

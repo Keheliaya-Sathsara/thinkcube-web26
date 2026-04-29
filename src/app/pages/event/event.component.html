@@ -22,37 +22,39 @@
 <section class="pt-6 md:pt-8 px-4 md:px-8 lg:px-16 dark:bg-black">
   <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
     <!-- Tab buttons - stacked on mobile, side by side on desktop -->
-    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10 border-b border-gray-200 dark:border-gray-800 pb-2 w-full md:w-auto">
       <button
         (click)="setActiveTab('past')"
-        class="cursor-pointer text-lg font-medium transition-colors"
-        [ngClass]="activeTab === 'past' ? 'text-black dark:text-white' : 'text-gray-500 dark:text-gray-400'"
+        class="cursor-pointer text-lg font-bold transition-all duration-300 px-2 py-1 relative"
+        [ngClass]="activeTab === 'past' ? 'text-orange-600 dark:text-orange-400' : 'text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200'"
       >
         Past Events
+        <div *ngIf="activeTab === 'past'" class="absolute -bottom-[9px] left-0 w-full h-1 bg-orange-500 rounded-t-full"></div>
       </button>
       <button
         (click)="setActiveTab('upcoming')"
-        class="cursor-pointer text-lg font-medium transition-colors"
-        [ngClass]="activeTab === 'upcoming' ? 'text-black dark:text-white' : 'text-gray-500 dark:text-gray-400'"
+        class="cursor-pointer text-lg font-bold transition-all duration-300 px-2 py-1 relative"
+        [ngClass]="activeTab === 'upcoming' ? 'text-orange-600 dark:text-orange-400' : 'text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200'"
       >
         Upcoming Events
+        <div *ngIf="activeTab === 'upcoming'" class="absolute -bottom-[9px] left-0 w-full h-1 bg-orange-500 rounded-t-full"></div>
       </button>
     </div>
 
     <!-- Filter buttons - wrapping appropriately for different screen sizes -->
-    <div class="flex flex-wrap gap-2 md:gap-3 py-4 md:py-6">
+    <div class="flex flex-wrap gap-3 py-6 md:py-8">
       <button
         (click)="setFilter('all')"
-        class="cursor-pointer px-3 py-1 md:px-4 md:py-2 text-xs md:text-sm font-medium rounded-full transition-colors border border-transparent"
-        [ngClass]="activeFilter === 'all' ? 'bg-black text-white dark:bg-white dark:text-black' : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'"
+        class="cursor-pointer px-5 py-2 text-xs md:text-sm font-bold rounded-full transition-all duration-300"
+        [ngClass]="activeFilter === 'all' ? 'bg-orange-500 text-white shadow-md transform scale-105' : 'bg-white dark:bg-[#111] text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-orange-300'"
       >
         All
       </button>
       <button
         *ngFor="let type of eventTypes"
         (click)="setFilter(type)"
-        class="cursor-pointer px-3 py-1 md:px-4 md:py-2 text-xs md:text-sm font-medium rounded-full transition-colors border border-transparent"
-        [ngClass]="activeFilter === type ? 'bg-black text-white dark:bg-white dark:text-black' : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'"
+        class="cursor-pointer px-5 py-2 text-xs md:text-sm font-bold rounded-full transition-all duration-300"
+        [ngClass]="activeFilter === type ? 'bg-orange-500 text-white shadow-md transform scale-105' : 'bg-white dark:bg-[#111] text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-orange-300'"
       >
         {{ type }}
       </button>
@@ -67,34 +69,33 @@
 
     <div
       *ngFor="let event of filteredEvents"
-      class="bg-white dark:bg-[#151515] border border-transparent dark:border-gray-800 rounded-xl md:rounded-2xl overflow-hidden flex flex-col md:flex-row h-auto md:h-64 cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-300"
+      class="bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-3xl overflow-hidden flex flex-col md:flex-row h-auto md:h-64 cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group relative"
       [routerLink]="['/eventflow', event.link]"
       (click)="scrollToTop()"
     >
+      <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-orange-400 to-orange-600 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top z-20 md:block hidden"></div>
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left z-20 md:hidden block"></div>
+
       <!-- Image section - full width on mobile, left column on desktop -->
       <div class="relative md:w-2/5 md:h-full flex items-center p-4">
-        <div class="w-full h-full relative">
-          <!-- Logo -->
-          <!-- <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <img [src]="event.logoUrl" alt="Logo" class="w-32 h-32 md:w-40 md:h-40 object-contain" />
-          </div> -->
-
+        <div class="w-full h-full relative overflow-hidden rounded-2xl">
           <!-- Image -->
           <img
             [src]="event.imageUrl"
             [alt]="event.title"
-            class="w-full opacity-40 object-cover h-40 md:h-full rounded-lg"
+            class="w-full h-40 md:h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
           />
+          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
         </div>
       </div>
 
       <!-- Content section - below image on mobile, right column on desktop -->
       <div
-        class="p-4 sm:p-5 md:p-6 w-full md:w-3/5 flex flex-col justify-between bg-white dark:bg-[#151515] rounded-b-xl md:rounded-b-none md:rounded-r-xl"
+        class="p-6 md:p-8 w-full md:w-3/5 flex flex-col justify-between"
       >
         <div>
-          <div class="flex justify-between items-center mb-2">
-            <span class="px-3 py-1 bg-gray-200 dark:bg-[#4D4D4D] rounded-xl text-black dark:text-white text-xs font-medium">
+          <div class="flex justify-between items-center mb-4">
+            <span class="px-4 py-1.5 bg-orange-50 dark:bg-[#222] border border-orange-100 dark:border-gray-700 text-orange-600 dark:text-orange-400 rounded-full text-xs font-bold uppercase tracking-wider">
               {{ event.type }}
             </span>
           </div>

@@ -17,36 +17,51 @@
       <!-- Grid Layout -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- Card 1 -->
-        <!-- <div
-          class="p-6 rounded-lg shadow-lg bg-gray-100 dark:bg-[#111] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-[#f5821f]"
+        <div
+          class="p-8 rounded-2xl bg-white dark:bg-[#111] shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-800 transition-all duration-300 ease-in-out transform hover:-translate-y-2 group relative overflow-hidden"
         >
-          <a [routerLink]="['/sector', '10']" (click)="scrollToTop()">
-            <img class="my-7" src="/images/home/industries/icon(6).png" alt />
-            <h3 class="mb-3 text-xl font-bold text-black dark:text-white">Transportation</h3>
-            <p class="mb-7 text-sm text-black dark:text-white">
-              Innovating solutions for efficient infrastructure and seamless logistics.
-            </p>
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+          <a [routerLink]="['/sector', '10']" (click)="scrollToTop()" class="block h-full">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start mb-2 w-full">
+              <img class="my-7 mx-auto md:mx-0 invert dark:invert-0 opacity-70 dark:opacity-100" src="/images/home/industries/icon(6).png" alt />
+              <div class="hidden md:flex mt-7 w-8 h-8 rounded-full bg-orange-50 dark:bg-[#222] items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
+                <mat-icon class="text-orange-500 group-hover:text-white dark:text-orange-400 transition-colors duration-300 text-[20px] w-[20px] h-[20px] flex items-center justify-center" aria-hidden="false" fontIcon="north_east"></mat-icon>
+              </div>
+            </div>
+            <h3 class="mb-3 text-xl font-bold text-center md:text-left">Transportation</h3>
+            <p class="mb-7 text-sm text-center md:text-left">Innovating solutions for efficient infrastructure and seamless logistics.</p>
           </a>
-        </div> -->
+        </div>
         <!-- Card 2 -->
-        <!-- <div
-          class="p-6 rounded-lg shadow-lg bg-gray-100 dark:bg-[#111] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-[#f5821f]"
+        <div
+          class="p-8 rounded-2xl bg-white dark:bg-[#111] shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-800 transition-all duration-300 ease-in-out transform hover:-translate-y-2 group relative overflow-hidden"
         >
-          <a [routerLink]="['/sector', '1']" (click)="scrollToTop()">
-            <img class="my-7" src="/images/home/industries/icon(5).png" alt />
-            <h3 class="mb-3 text-xl font-bold">Telecommunication & IT</h3>
-            <p class="mb-7 text-sm">Delivering reliable connectivity and advanced IT solutions.</p>
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+          <a [routerLink]="['/sector', '1']" (click)="scrollToTop()" class="block h-full">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start mb-2 w-full">
+              <img class="my-7 mx-auto md:mx-0 invert dark:invert-0 opacity-70 dark:opacity-100" src="/images/home/industries/icon(5).png" alt />
+              <div class="hidden md:flex mt-7 w-8 h-8 rounded-full bg-orange-50 dark:bg-[#222] items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
+                <mat-icon class="text-orange-500 group-hover:text-white dark:text-orange-400 transition-colors duration-300 text-[20px] w-[20px] h-[20px] flex items-center justify-center" aria-hidden="false" fontIcon="north_east"></mat-icon>
+              </div>
+            </div>
+            <h3 class="mb-3 text-xl font-bold text-center md:text-left">Telecommunication & IT</h3>
+            <p class="mb-7 text-sm text-center md:text-left">Delivering reliable connectivity and advanced IT solutions.</p>
           </a>
-        </div> -->
+        </div>
         <!-- Card 3 -->
         <div
           class="p-8 rounded-2xl bg-white dark:bg-[#111] shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-800 transition-all duration-300 ease-in-out transform hover:-translate-y-2 group relative overflow-hidden"
         >
           <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-          <a [routerLink]="['/sector', '2']" (click)="scrollToTop()">
-            <img class="my-7" src="/images/home/industries/icon(4).png" alt />
-            <h3 class="mb-3 text-xl font-bold">Business Process Outsourcing</h3>
-            <p class="mb-7 text-sm">Enhancing business efficiency through innovative outsourcing solutions.</p>
+          <a [routerLink]="['/sector', '2']" (click)="scrollToTop()" class="block h-full">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start mb-2 w-full">
+              <img class="my-7 mx-auto md:mx-0 invert dark:invert-0 opacity-70 dark:opacity-100" src="/images/home/industries/icon(4).png" alt />
+              <div class="hidden md:flex mt-7 w-8 h-8 rounded-full bg-orange-50 dark:bg-[#222] items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
+                <mat-icon class="text-orange-500 group-hover:text-white dark:text-orange-400 transition-colors duration-300 text-[20px] w-[20px] h-[20px] flex items-center justify-center" aria-hidden="false" fontIcon="north_east"></mat-icon>
+              </div>
+            </div>
+            <h3 class="mb-3 text-xl font-bold text-center md:text-left">Business Process Outsourcing</h3>
+            <p class="mb-7 text-sm text-center md:text-left">Enhancing business efficiency through innovative outsourcing solutions.</p>
           </a>
         </div>
         <!-- Card 4 -->
@@ -54,10 +69,15 @@
           class="p-8 rounded-2xl bg-white dark:bg-[#111] shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-800 transition-all duration-300 ease-in-out transform hover:-translate-y-2 group relative overflow-hidden"
         >
           <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-          <a [routerLink]="['/sector', '3']" (click)="scrollToTop()">
-            <img class="my-7" src="/images/home/industries/icon(3).png" alt />
-            <h3 class="mb-3 text-xl font-bold">Trading</h3>
-            <p class="mb-7 text-sm">Unlocking new opportunities for growth and international business.</p>
+          <a [routerLink]="['/sector', '3']" (click)="scrollToTop()" class="block h-full">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start mb-2 w-full">
+              <img class="my-7 mx-auto md:mx-0 invert dark:invert-0 opacity-70 dark:opacity-100" src="/images/home/industries/icon(3).png" alt />
+              <div class="hidden md:flex mt-7 w-8 h-8 rounded-full bg-orange-50 dark:bg-[#222] items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
+                <mat-icon class="text-orange-500 group-hover:text-white dark:text-orange-400 transition-colors duration-300 text-[20px] w-[20px] h-[20px] flex items-center justify-center" aria-hidden="false" fontIcon="north_east"></mat-icon>
+              </div>
+            </div>
+            <h3 class="mb-3 text-xl font-bold text-center md:text-left">Trading</h3>
+            <p class="mb-7 text-sm text-center md:text-left">Unlocking new opportunities for growth and international business.</p>
           </a>
         </div>
         <!-- Card 5 -->
@@ -65,10 +85,15 @@
           class="p-8 rounded-2xl bg-white dark:bg-[#111] shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-800 transition-all duration-300 ease-in-out transform hover:-translate-y-2 group relative overflow-hidden"
         >
           <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-          <a [routerLink]="['/sector', '4']" (click)="scrollToTop()">
-            <img class="my-7" src="/images/home/industries/icon(2).png" alt />
-            <h3 class="mb-3 text-xl font-bold">Power & Energy</h3>
-            <p class="mb-7 text-sm">Enhancing energy efficiency through sustainable innovations.</p>
+          <a [routerLink]="['/sector', '4']" (click)="scrollToTop()" class="block h-full">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start mb-2 w-full">
+              <img class="my-7 mx-auto md:mx-0 invert dark:invert-0 opacity-70 dark:opacity-100" src="/images/home/industries/icon(2).png" alt />
+              <div class="hidden md:flex mt-7 w-8 h-8 rounded-full bg-orange-50 dark:bg-[#222] items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
+                <mat-icon class="text-orange-500 group-hover:text-white dark:text-orange-400 transition-colors duration-300 text-[20px] w-[20px] h-[20px] flex items-center justify-center" aria-hidden="false" fontIcon="north_east"></mat-icon>
+              </div>
+            </div>
+            <h3 class="mb-3 text-xl font-bold text-center md:text-left">Power & Energy</h3>
+            <p class="mb-7 text-sm text-center md:text-left">Enhancing energy efficiency through sustainable innovations.</p>
           </a>
         </div>
         <!-- Card 6 -->
@@ -76,10 +101,15 @@
           class="p-8 rounded-2xl bg-white dark:bg-[#111] shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-800 transition-all duration-300 ease-in-out transform hover:-translate-y-2 group relative overflow-hidden"
         >
           <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-          <a [routerLink]="['/sector', '5']" (click)="scrollToTop()">
-            <img class="my-7" src="/images/home/industries/icon(1).png" alt />
-            <h3 class="mb-3 text-xl font-bold">Healthcare</h3>
-            <p class="mb-7 text-sm">Empowering lives with innovative, patient-focused healthcare solutions.</p>
+          <a [routerLink]="['/sector', '5']" (click)="scrollToTop()" class="block h-full">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start mb-2 w-full">
+              <img class="my-7 mx-auto md:mx-0 invert dark:invert-0 opacity-70 dark:opacity-100" src="/images/home/industries/icon(1).png" alt />
+              <div class="hidden md:flex mt-7 w-8 h-8 rounded-full bg-orange-50 dark:bg-[#222] items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
+                <mat-icon class="text-orange-500 group-hover:text-white dark:text-orange-400 transition-colors duration-300 text-[20px] w-[20px] h-[20px] flex items-center justify-center" aria-hidden="false" fontIcon="north_east"></mat-icon>
+              </div>
+            </div>
+            <h3 class="mb-3 text-xl font-bold text-center md:text-left">Healthcare</h3>
+            <p class="mb-7 text-sm text-center md:text-left">Empowering lives with innovative, patient-focused healthcare solutions.</p>
           </a>
         </div>
         <!-- Card 7 -->
@@ -87,10 +117,15 @@
           class="p-8 rounded-2xl bg-white dark:bg-[#111] shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-800 transition-all duration-300 ease-in-out transform hover:-translate-y-2 group relative overflow-hidden"
         >
           <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-          <a [routerLink]="['/sector', '9']" (click)="scrollToTop()">
-            <img class="my-7" src="/images/home/industries/icon(7).png" alt />
-            <h3 class="mb-3 text-xl font-bold">Leaser</h3>
-            <p class="mb-7 text-sm">
+          <a [routerLink]="['/sector', '9']" (click)="scrollToTop()" class="block h-full">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start mb-2 w-full">
+              <img class="my-7 mx-auto md:mx-0 invert dark:invert-0 opacity-70 dark:opacity-100" src="/images/home/industries/icon(7).png" alt />
+              <div class="hidden md:flex mt-7 w-8 h-8 rounded-full bg-orange-50 dark:bg-[#222] items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
+                <mat-icon class="text-orange-500 group-hover:text-white dark:text-orange-400 transition-colors duration-300 text-[20px] w-[20px] h-[20px] flex items-center justify-center" aria-hidden="false" fontIcon="north_east"></mat-icon>
+              </div>
+            </div>
+            <h3 class="mb-3 text-xl font-bold text-center md:text-left">Leaser</h3>
+            <p class="mb-7 text-sm text-center md:text-left">
               Unleashing the thrill of adventure with cutting-edge leisure experiences, creating unforgettable moments.
             </p>
           </a>
@@ -100,10 +135,15 @@
           class="p-8 rounded-2xl bg-white dark:bg-[#111] shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-800 transition-all duration-300 ease-in-out transform hover:-translate-y-2 group relative overflow-hidden"
         >
           <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-          <a [routerLink]="['/sector', '8']" (click)="scrollToTop()">
-            <img class="my-7" src="/images/home/industries/icon(8).png" alt />
-            <h3 class="mb-3 text-xl font-bold">Defense</h3>
-            <p class="mb-7 text-sm">
+          <a [routerLink]="['/sector', '8']" (click)="scrollToTop()" class="block h-full">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start mb-2 w-full">
+              <img class="my-7 mx-auto md:mx-0 invert dark:invert-0 opacity-70 dark:opacity-100" src="/images/home/industries/icon(8).png" alt />
+              <div class="hidden md:flex mt-7 w-8 h-8 rounded-full bg-orange-50 dark:bg-[#222] items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
+                <mat-icon class="text-orange-500 group-hover:text-white dark:text-orange-400 transition-colors duration-300 text-[20px] w-[20px] h-[20px] flex items-center justify-center" aria-hidden="false" fontIcon="north_east"></mat-icon>
+              </div>
+            </div>
+            <h3 class="mb-3 text-xl font-bold text-center md:text-left">Defense</h3>
+            <p class="mb-7 text-sm text-center md:text-left">
               Enhancing national security with cutting-edge defense solutions, advancing technology to protect and
               empower, and strengthening global alliances for a safer future.
             </p>
@@ -114,10 +154,15 @@
           class="p-8 rounded-2xl bg-white dark:bg-[#111] shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-800 transition-all duration-300 ease-in-out transform hover:-translate-y-2 group relative overflow-hidden"
         >
           <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-          <a [routerLink]="['/sector', '6']" (click)="scrollToTop()">
-            <img class="my-7" src="/images/home/industries/icon(9).png" alt />
-            <h3 class="mb-3 text-xl font-bold">Agriculture & Food</h3>
-            <p class="mb-7 text-sm">
+          <a [routerLink]="['/sector', '6']" (click)="scrollToTop()" class="block h-full">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start mb-2 w-full">
+              <img class="my-7 mx-auto md:mx-0 invert dark:invert-0 opacity-70 dark:opacity-100" src="/images/home/industries/icon(9).png" alt />
+              <div class="hidden md:flex mt-7 w-8 h-8 rounded-full bg-orange-50 dark:bg-[#222] items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
+                <mat-icon class="text-orange-500 group-hover:text-white dark:text-orange-400 transition-colors duration-300 text-[20px] w-[20px] h-[20px] flex items-center justify-center" aria-hidden="false" fontIcon="north_east"></mat-icon>
+              </div>
+            </div>
+            <h3 class="mb-3 text-xl font-bold text-center md:text-left">Agriculture & Food</h3>
+            <p class="mb-7 text-sm text-center md:text-left">
               Cultivating sustainable agriculture and advancing food security, ensuring a resilient supply chain to
               nourish communities.
             </p>
@@ -139,8 +184,13 @@
           class="md:col-span-2 p-8 rounded-2xl bg-white dark:bg-[#111] shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-800 transition-all duration-300 ease-in-out transform hover:-translate-y-2 group relative overflow-hidden"
         >
           <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-          <a [routerLink]="['/sector', '7']" (click)="scrollToTop()">
-            <img class="my-7 mx-auto md:mx-0" src="/images/home/industries/icon(10).png" alt />
+          <a [routerLink]="['/sector', '7']" (click)="scrollToTop()" class="block h-full">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start mb-2 w-full">
+              <img class="my-7 mx-auto md:mx-0 invert dark:invert-0 opacity-70 dark:opacity-100" src="/images/home/industries/icon(10).png" alt />
+              <div class="hidden md:flex mt-7 w-8 h-8 rounded-full bg-orange-50 dark:bg-[#222] items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
+                <mat-icon class="text-orange-500 group-hover:text-white dark:text-orange-400 transition-colors duration-300 text-[20px] w-[20px] h-[20px] flex items-center justify-center" aria-hidden="false" fontIcon="north_east"></mat-icon>
+              </div>
+            </div>
             <h3 class="mb-3 text-xl font-bold text-center md:text-left">Water & Irrigation</h3>
             <p class="mb-7 text-sm text-center md:text-left">
               Sustaining communities with advanced water and irrigation solutions, optimizing resources for growth, and
@@ -152,8 +202,13 @@
           class="md:col-span-2 p-8 rounded-2xl bg-white dark:bg-[#111] shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-800 transition-all duration-300 ease-in-out transform hover:-translate-y-2 group relative overflow-hidden"
         >
           <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-          <a [routerLink]="['/sector', '12']" (click)="scrollToTop()">
-            <img class="my-7 mx-auto md:mx-0" src="/images/home/industries/icon(11).png" alt />
+          <a [routerLink]="['/sector', '12']" (click)="scrollToTop()" class="block h-full">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start mb-2 w-full">
+              <img class="my-7 mx-auto md:mx-0 invert dark:invert-0 opacity-70 dark:opacity-100" src="/images/home/industries/icon(11).png" alt />
+              <div class="hidden md:flex mt-7 w-8 h-8 rounded-full bg-orange-50 dark:bg-[#222] items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
+                <mat-icon class="text-orange-500 group-hover:text-white dark:text-orange-400 transition-colors duration-300 text-[20px] w-[20px] h-[20px] flex items-center justify-center" aria-hidden="false" fontIcon="north_east"></mat-icon>
+              </div>
+            </div>
             <h3 class="mb-3 text-xl font-bold text-center md:text-left">Broadcasting</h3>
             <p class="mb-7 text-sm text-center md:text-left">
               We are a broadcasting company committed to delivering engaging and impactful content across multiple
@@ -165,7 +220,7 @@
         <!-- Card 11
         <div class="md:col-span-2 p-6 rounded-lg shadow-lg bg-gray-100 dark:bg-[#111] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-[#f5821f]">
           <a [routerLink]="['/sector', '7']" (click)="scrollToTop()">
-            <img class="my-7 mx-auto md:mx-0" src="/images/home/industries/icon(10).png" alt />
+            <img class="my-7 mx-auto md:mx-0 invert dark:invert-0 opacity-70 dark:opacity-100" src="/images/home/industries/icon(10).png" alt />
             <h3 class="mb-3 text-xl font-bold text-center md:text-left">Water Resource Management</h3>
             <p class="mb-7 text-sm text-center md:text-left">Safeguarding water sources through integrated management practices, leveraging data-driven insights to ensure availability, quality, and equitable distribution for generations to come.</p>
           </a>
@@ -173,7 +228,7 @@
          Card 12 
         <div class="md:col-span-2 p-6 rounded-lg shadow-lg bg-gray-100 dark:bg-[#111] transition duration-300 ease-in-out transform hover:scale-105 hover:bg-[#f5821f]">
           <a [routerLink]="['/sector', '7']" (click)="scrollToTop()">
-            <img class="my-7 mx-auto md:mx-0" src="/images/home/industries/icon(1).png" alt />
+            <img class="my-7 mx-auto md:mx-0 invert dark:invert-0 opacity-70 dark:opacity-100" src="/images/home/industries/icon(1).png" alt />
             <h3 class="mb-3 text-xl font-bold text-center md:text-left">Smart Irrigation Technologies</h3>
             <p class="mb-7 text-sm text-center md:text-left">Revolutionizing agriculture with IoT-enabled irrigation systems that optimize water usage, reduce waste, and boost crop yields through real-time monitoring and automation.</p>
           </a>

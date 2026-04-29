@@ -24,22 +24,25 @@
         <h2 class="text-lg sm:text-[36px] md:text-[36px] text-black dark:text-white text-center md:text-left mb-4 sm:mb-8">
           {{ sector?.headerone }}
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
-          <div class="md:text-left">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 relative">
+          <!-- Subtle Glow -->
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-orange-50/50 dark:bg-orange-900/10 blur-[80px] rounded-full pointer-events-none z-0"></div>
+          
+          <div class="md:text-left relative z-10">
             <h2
-              class="text-3xl sm:text-4xl md:text-[47px] leading-tight gradient-header font-bold mb-3 sm:mb-4">
+              class="text-3xl sm:text-4xl md:text-[47px] leading-tight gradient-header font-bold mb-6">
               {{ sector?.contentone }} <br class="hidden sm:block" />
               {{ sector?.contenttwo }} <br class="hidden sm:block" />
               {{ sector?.contentthree }}
             </h2>
             <p
-              class="text-[16px] sm:text-[16px] md:text-[16px] lg:text-[16px] md:text-base text-gray-700 dark:text-[#4B5563] mb-4 sm:mb-6">
+              class="text-[16px] md:text-lg text-gray-700 dark:text-[#4B5563] mb-6 font-medium border-l-4 border-orange-400 pl-4">
               {{ sector?.paragraphone }}
             </p>
           </div>
-          <div class="text-gray-600 dark:text-gray-300 text-xs sm:text-sm md:text-base text-left sm:text-justify mt-0 md:mt-0">
-            <p class="text-[16px] sm:text-[16px] md:text-[16px] mb-3 sm:mb-4">{{ sector?.paragraphtwo }}</p>
-            <p class="text-[16px] sm:text-[16px] md:text-[16px] mb-3 sm:mb-4">{{ sector?.paragraphthree }}</p>
+          <div class="relative z-10 bg-white dark:bg-[#151515] p-8 sm:p-10 rounded-3xl shadow-xl dark:shadow-none dark:border dark:border-gray-800 text-gray-600 dark:text-[#A1A1AA] text-base leading-relaxed text-left sm:text-justify transform hover:-translate-y-1 transition-transform duration-500">
+            <p class="mb-5">{{ sector?.paragraphtwo }}</p>
+            <p>{{ sector?.paragraphthree }}</p>
           </div>
         </div>
 
@@ -57,10 +60,11 @@
           </p>
 
           <!-- Company cards section -->
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 mb-6 sm:mb-8"
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 mb-12 sm:mb-16"
             *ngFor="let company of companyCards; trackBy: trackById">
             <div
-              class="lg:col-span-4 bg-white border border-transparent dark:border-gray-800 dark:bg-[#111] rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-md h-auto sm:h-[400px] md:h-[440px] flex flex-col">
+              class="lg:col-span-4 bg-white dark:bg-[#111] rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-800 transition-all duration-300 transform hover:-translate-y-2 group relative overflow-hidden h-auto sm:h-[400px] md:h-[440px] flex flex-col z-10">
+              <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               <div class="flex justify-between items-center mb-6 sm:mb-6">
                 <div>
                   <h3 class="text-lg sm:text-lg font-semibold text-black">{{ company.cardcontentone }}</h3>
@@ -83,9 +87,9 @@
                     {{ company.cardparagraphtwo }}
                   </div>
                 </div>
-                <a [routerLink]="['/company', company.id]" (click)="scrollToTop()">
+                <a [routerLink]="['/company', company.id]" (click)="scrollToTop()" class="block group/btn">
                   <button
-                    class="w-full py-1.5 sm:py-2 border border-black sm:border-2 text-black text-xs sm:text-sm rounded-full hover:bg-[#c4bebe] hover:text-black transition-colors transition duration-300 flex items-center justify-center gap-1 sm:gap-2 cursor-pointer">
+                    class="w-full py-2 sm:py-3 bg-slate-50 dark:bg-[#1A1A1A] text-slate-800 dark:text-white border border-gray-200 dark:border-gray-700 text-sm font-semibold rounded-full group-hover/btn:bg-orange-500 group-hover/btn:text-white group-hover/btn:border-orange-500 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-sm">
                     {{ company.cardparagraphthree }}
                     <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px"
                       class="sm:h-[20px] sm:w-[24px]" fill="#000000">
@@ -95,9 +99,9 @@
                 </a>
               </div>
             </div>
-            <div class="lg:col-span-8 hidden md:block">
+            <div class="lg:col-span-8 hidden md:block overflow-hidden rounded-3xl shadow-lg border border-gray-100 dark:border-gray-800 relative group/img">
               <img [src]="company.imageone" alt="Company Image"
-                class="w-full h-[300px] sm:h-[400px] md:h-[440px] rounded-xl sm:rounded-3xl object-cover shadow-lg" />
+                class="w-full h-full object-cover transform group-hover/img:scale-105 transition-transform duration-700" />
             </div>
           </div>
         </div>

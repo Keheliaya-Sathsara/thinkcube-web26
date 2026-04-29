@@ -39,10 +39,13 @@
           {{ company?.headerone }}
         </h2>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
-          <div class="order-1 lg:order-1">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 relative">
+          <!-- Subtle Glow -->
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-orange-50/50 dark:bg-orange-900/10 blur-[80px] rounded-full pointer-events-none z-0"></div>
+
+          <div class="order-1 lg:order-1 relative z-10">
             <h2
-              class="text-2xl xs:text-3xl sm:text-4xl md:text-[35px] lg:text-[40px] xl:text-[45px] leading-tight bg-clip-text text-[transparent] bg-gradient-to-r from-white to-gray-400 font-bold mb-4 sm:mb-6 md:text-left">
+              class="text-2xl xs:text-3xl sm:text-4xl md:text-[35px] lg:text-[40px] xl:text-[45px] leading-tight gradient-header font-bold mb-4 sm:mb-6 md:text-left">
               {{ company?.contentone }} <br class="hidden sm:block" />
               {{ company?.contenttwo }} <br class="hidden sm:block" />
               {{ company?.contentthree }}
@@ -68,9 +71,9 @@
           </div>
 
           <div
-            class="order-2 lg:order-2 text-gray-300 text-sm xs:text-base sm:text-lg md:text-base lg:text-lg space-y-4 sm:space-y-6">
-            <p class="leading-relaxed md:text-left lg:text-justify">{{ company?.paragraphtwo }}</p>
-            <p class="leading-relaxed md:text-left lg:text-justify">{{ company?.paragraphthree }}</p>
+            class="order-2 lg:order-2 bg-white dark:bg-[#151515] p-8 sm:p-10 rounded-3xl shadow-xl dark:shadow-none dark:border dark:border-gray-800 text-gray-600 dark:text-[#A1A1AA] text-base leading-relaxed text-left sm:text-justify transform hover:-translate-y-1 transition-transform duration-500 relative z-10">
+            <p class="mb-5">{{ company?.paragraphtwo }}</p>
+            <p>{{ company?.paragraphthree }}</p>
           </div>
         </div>
       </div>
@@ -78,12 +81,13 @@
   </div>
 
   <!-- Full Width Card Section -->
-  <div class="w-full mx-auto mt-8 sm:mt-12 md:mt-16" *ngIf="shouldShowCard()">
-    <div class="bg-white rounded-2xl shadow-2xl overflow-hidden w-full border border-[#e5e7eb]">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+  <div class="w-full mx-auto mt-8 sm:mt-12 md:mt-20 relative" *ngIf="shouldShowCard()">
+    <div class="bg-white dark:bg-[#111] rounded-3xl shadow-xl hover:shadow-2xl overflow-hidden w-full border border-gray-100 dark:border-gray-800 transform hover:-translate-y-2 transition-all duration-500 group relative">
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20"></div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 relative z-10">
         <!-- Left Side - Card Logo and Button -->
         <div
-          class="p-8 lg:p-12 flex flex-col items-center justify-center space-y-8 bg-gradient-to-br from-white to-[#f9f9f9]">
+          class="p-8 lg:p-12 flex flex-col items-center justify-center space-y-8 bg-slate-50 dark:bg-[#151515]">
           <div class="flex justify-center">
             <img [src]="company?.cardlogo" [alt]="(company?.cardtitle || company?.title) + ' logo'"
               class="max-h-20 sm:max-h-24 lg:max-h-60 object-contain w-auto transition-transform duration-300 hover:scale-105" />
@@ -104,11 +108,11 @@
         </div>
 
         <!-- Right Side - Card Information -->
-        <div class="p-8 lg:p-12 flex flex-col justify-center bg-white">
-          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-2xl text-black font-bold mb-6 leading-tight">
+        <div class="p-8 lg:p-12 flex flex-col justify-center bg-white dark:bg-[#111]">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-2xl text-slate-800 dark:text-white font-bold mb-6 leading-tight">
             {{ company?.cardheading || company?.title }}
           </h2>
-          <p class="text-gray-600 text-base sm:text-md lg:text-md leading-relaxed mb-6">
+          <p class="text-gray-600 dark:text-gray-400 text-base sm:text-md lg:text-md leading-relaxed mb-6">
             {{ company?.cardsubtitle || company?.subtitle }}
           </p>
         </div>
@@ -162,9 +166,9 @@
               *ngIf="company?.contact?.phone">
               <div class="relative">
                 <div
-                  class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-white to-white rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  class="w-12 h-12 lg:w-14 lg:h-14 bg-orange-50 dark:bg-[#222] rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-orange-100 dark:border-gray-800 group-hover:scale-110 transition-transform duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                    fill="#000000">
+                    class="fill-orange-500 dark:fill-orange-400">
                     <path
                       d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
                   </svg>
@@ -188,9 +192,9 @@
               *ngIf="company?.contact?.email">
               <div class="relative">
                 <div
-                  class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-white to-white rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  class="w-12 h-12 lg:w-14 lg:h-14 bg-orange-50 dark:bg-[#222] rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-orange-100 dark:border-gray-800 group-hover:scale-110 transition-transform duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                    fill="#000000">
+                    class="fill-orange-500 dark:fill-orange-400">
                     <path
                       d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
                   </svg>
@@ -214,9 +218,9 @@
               *ngIf="company?.contact?.address">
               <div class="relative">
                 <div
-                  class="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-white to-white rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  class="w-12 h-12 lg:w-14 lg:h-14 bg-orange-50 dark:bg-[#222] rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-orange-100 dark:border-gray-800 group-hover:scale-110 transition-transform duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                    fill="#000000">
+                    class="fill-orange-500 dark:fill-orange-400">
                     <path
                       d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z" />
                   </svg>
